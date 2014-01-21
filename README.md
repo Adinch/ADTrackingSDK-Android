@@ -74,16 +74,17 @@ first starts.
 ---------------------------------
 
 Enter in command line:
+
 	adb shell
 	am broadcast -a com.android.vending.INSTALL_REFERRER – n <your.package.name>/adinch.app.install.AdinchReceiver --es "referrer" "utm_source..." 
 
 if you see this text in LogCat:
 
-01-21 10:57:18.520: I/AdinchAppListener(11069): --------------------
-01-21 10:57:18.520: I/AdinchAppListener(11069): response status: 200
-01-21 10:57:18.520: I/AdinchAppListener(11069): response size: 4
-01-21 10:57:18.520: I/AdinchAppListener(11069): response: 
-01-21 10:57:18.520: I/AdinchAppListener(11069): None
-01-21 10:57:18.520: I/AdinchAppListener(11069): --------------------
+	01-21 10:57:18.520: I/AdinchAppListener(11069): --------------------
+	01-21 10:57:18.520: I/AdinchAppListener(11069): response status: 200
+	01-21 10:57:18.520: I/AdinchAppListener(11069): response size: 4
+	01-21 10:57:18.520: I/AdinchAppListener(11069): response: 
+	01-21 10:57:18.520: I/AdinchAppListener(11069): None
+	01-21 10:57:18.520: I/AdinchAppListener(11069): --------------------
 
 Tracking was added successful. 
