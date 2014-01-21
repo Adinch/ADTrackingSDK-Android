@@ -70,7 +70,7 @@ first starts.
 
     AdinchConnect.getConnectInstance(this);
 
-5.Check results. 
+5. Check results. 
 ---------------------------------
 
 Enter in command line:
