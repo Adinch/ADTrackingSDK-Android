@@ -1,19 +1,19 @@
-Adinch App Install User Guide.
+﻿Adinch Tracking SDK User Guide.
 =====================
 
 
 Introduction
 -------------
-This guide will help you to include the Adinch App Install SDK into your application.
+This guide will help you to include the Adinch Tracking SDK into your application.
 
 SDK Integration
 ---------------
 
-The following steps should be performed in Eclipse to include the Adinch App Install into your Android Application :
+The following steps should be performed in Eclipse to include the Adinch Tracking into your Android Application :
 
-1.  Include the Adinch App Install SDK library.
+1.  Include the Adinch Tracking SDK library.
 --------------
-In your application, create a folder ‘libs’ and drag the jar file adinch_appinstall_sdk.jar into the
+In your application, create a folder ‘libs’ and drag the jar file adinch_tracking_sdk.jar into the
 libs folder.
     
 2.  Add settings to your application manifest :
@@ -25,13 +25,13 @@ libs folder.
           </intent-filter>
     </receiver>
     <meta-data android:name="APP_NAME" android:value="YOUR.APPLICATION.NAME" />
-    <meta-data android:name="ADINCH_CLIENT_ID" android:value="ClientID" />
+    <meta-data android:name="ADINCH_TRACKING_ID" android:value="YOUR.TRACKING.ID" />
 
 * Replace YOUR.APPLICATION.NAME with your application package name along the lines of com.yourcompany.yourapplication
-* Replace ClientID with the client ID code given to you by Adinch App Install.
+* Replace YOUR.TRACKING.ID with the tracking ID code given to you by Adinch Target Profile.
 
 Add the following lines to AndroidManifest.xml after the </application> tag to allow permissions
-for the Adinch App Install SDK
+for the Adinch Tracking SDK
 <!-- Container TAG requires Internet permission -->
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -39,7 +39,7 @@ for the Adinch App Install SDK
 3. If you have any other referral Tracking :
 -------------------------------------------
 
-You should only have a single receiver for the INSTALL_REFERRER intent. If you are using any other referral tracking providers such as Admob or GoogleAnalytics, Adinch App Install provides a mechanism to forward the intent from the market on to other receivers. Simply add a line like the following one (The example given below is for Admob) within the receiver tags :
+You should only have a single receiver for the INSTALL_REFERRER intent. If you are using any other referral tracking providers such as Admob or GoogleAnalytics, Adinch Tracking provides a mechanism to forward the intent from the market on to other receivers. Simply add a line like the following one (The example given below is for Admob) within the receiver tags :
 
     <!—Forward the referral to Admob -->
     <meta-data android:name="forward.Admob"
@@ -55,9 +55,9 @@ The name of the tag (in this case forward.Admob) can be anything so long as it i
           android:value="com.admob.android.ads.analytics.InstallReceiver" /> 
     </receiver>
     
-You can add as many receivers as you like and the Adinch App Install SDK will forward the referral broadcast on to each of them.
+You can add as many receivers as you like and the Adinch Tracking SDK will forward the referral broadcast on to each of them.
 
-4. Call the Adinch App Install SDK.
+4. Call the Adinch Tracking SDK.
 ----------------------------------
 
 a) At the top of your main file include the Tag library :
@@ -65,7 +65,7 @@ a) At the top of your main file include the Tag library :
     import adinch.app.install.AdinchConnect;
     
 b) Inside your applications OnCreate function add the following lines :
-// Connect with the Adinch App Install server.  Call this when the application
+// Connect with the Adinch Tracking server.  Call this when the application
 first starts.
 
     AdinchConnect.getConnectInstance(this);
